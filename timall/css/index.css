@@ -1,0 +1,28 @@
+#header{
+    background: #f2f2f2;
+    height: 32px;
+    border-bottom: 1px solid #e5e5e5;
+
+}
+#a1{
+    line-height: 32px;
+    font-size: 12px;
+    padding-left:20px;
+    padding-right: 10px;
+    color:#999;
+}
+#a2{
+    line-height: 32px;
+    font-size: 12px;
+    padding-left:10px;
+    padding-right: 10px;
+    color:#999;
+}
+#login-contain{
+    color: #999;
+    font-size: 12px;
+}
+
+#login-contain a:hover{
+    color: red;
+}
