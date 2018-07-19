@@ -4,15 +4,37 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        input::placeholder{
-            color: red;
+        div{
+            width: 200px;
+            height:200px;
+            border: 1px solid red;
+            float: left;
+            position: relative;
+            overflow: hidden;
+        }
+        div:hover{
+            border-color: yellow;
+            z-index: 1;
+        }
+        #div2{
+            left: -1px;
+        }
+        #div3{
+            clear: both;
+            top: -1px;
+        }
+        #div4{
+            top: -1px;
+            left: -1px;
         }
     </style>
 </head>
 <body>
-    <div>
-        <input type="text" placeholder="aaa">
-    </div>
+
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <div id="div4"></div>
 
 </body>
 </html>
