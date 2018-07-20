@@ -6,10 +6,13 @@
 </head>
 <body>
 <script>
-    var x=Math.random();
-    var y=Math.random();
-    var res=Math.max(x,y);
-    console.log(res);
+   var today=new Date();
+   var year=today.getFullYear();
+   var flag=true;
+   if(year%4==0 && year%100!==0 ||year%400==0){
+       flag=false;
+   }
+   console.log(flag);
 
 
 </script>
