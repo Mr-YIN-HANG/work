@@ -1,0 +1,170 @@
+#header{
+    background: #f2f2f2;
+    height: 32px;
+    border-bottom: 1px solid #e5e5e5;
+    line-height: 32px;
+    font-size: 12px;
+}
+#a1{
+
+    padding-left:20px;
+    padding-right: 10px;
+    color:#999;
+}
+#a2{
+
+    padding-left:10px;
+    padding-right: 10px;
+    color:#999;
+}
+#login-contain{
+    color: #999;
+    font-size: 12px;
+    display: inline;
+}
+#login-contain a:hover{
+    color: red;
+}
+/*#login-contain2 a:hover{*/
+    /*color: red;*/
+/*}*/
+#header-menu{
+    float: right;
+    line-height: 32px;
+}
+#header-menu .menu{
+    float: left;
+    position: relative;
+    padding: 0 14px;
+}
+.menu a{
+    padding-left: 10px;
+    padding-right: 14px;
+    line-height: 32px;
+    font-size: 12px;
+    color:#999;
+}
+#header-menu a:hover{
+    color: red;
+}
+#a3{
+    width: 0;
+    height: 14px;
+    margin: 9px 2px 0 5px;
+    border-left: 1px solid #999;
+}
+#header .iconfont{
+    color: red;
+    font-size: 14px;
+}
+#header .menu-hd::after{
+    content: '';
+    border: 3px solid transparent;
+    border-top-color: #bbb;
+    position: absolute;
+    right:4px;
+    top: 14px;
+    transform-origin: 3px 1.5px;
+}
+/*search*/
+#logo{
+    width: 240px;
+    height: 130px;
+}
+input::placeholder {
+    color: #999;
+}
+#appbar{
+    width: 483px;
+    height: 26px;
+
+    padding: 5px 3px 5px 5px;
+    border: 2px solid #ff0036;
+    position: relative;
+
+}
+button{
+    width: 132px;
+    height: 40px;
+    background: #ff0036;
+    font-size: 16px;
+    color: #fff;
+    border: 2px solid #ff0036;
+    position: absolute;
+}
+#div1{
+    width: 700px;
+    height: 36px;
+    padding: 2px 0 2px 2px;
+    color: #999;
+    float: right;
+    position: relative;
+    right: 200px;
+    top: 50px;
+    font-size: 14px;
+}
+#header .menu-hd:hover::after{
+
+    transform: rotate(180deg);
+    transition: transform 0.2s linear ;
+}
+#menu-hd2{
+    width: 625px;
+    height: 28px;
+    list-style: none;
+    margin-top: 4px;
+}
+#menu-hd2 li{
+    float: left;
+}
+#menu-hd2 .menu-hd2-1{
+    padding-left: 12px;
+    padding-right: 12px;
+    color: #999;
+}
+#menu-hd2 .menu-hd2-2{
+    color: #ff0036;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+#menu-hd2 .menu-hd2-3{
+    border-right: 1px solid #999;
+}
+#header-menu .menu-3:hover {
+    color: yellow;
+ }
+#header-menu .menu-4:hover .iconfont{
+    color: yellow;
+   
+}
+#header-menu .menu-4:hover a span{
+    color: #999;
+}
+#header-menu .menu-4:hover a{
+    color: yellow;
+}
+#header-menu .menu-4 a:hover span {
+    color: yellow;
+}
+#header-menu .menu-hd:hover .header-menu-top{
+    display: block;
+}
+#header-menu .header-menu-top{
+    border: 3px solid #ccc;
+    border-top: 0;
+    position: absolute;
+    top:32px;
+    left:0;
+    width: 100px;
+    display: none;
+}
+#header-menu .header-menu-top li{
+    padding: 0 14px;
+}
+#header-menu .header-menu-top a{
+    color:#999;
+}
+#header-menu .header-menu-top a:hover{
+    color:#f00;
+    text-decoration: underline;
+}
