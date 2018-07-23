@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        li{
+            width: 120px;
+            height: 30px;
+            list-style: none;
+            float: left;
+            border: 1px solid #cccccc;
+            text-align: center;
+            background: #fff;
+            margin-right: 10px;
+
+        }
+        #contain div{
+            position: absolute;
+            width: 400px;
+            height: 270px;
+            background: #ccc;
+            border-top: 1px solid #000;
+            display: none;
+        }
+        #contain{
+            width: 400px;
+            margin: 100px auto;
+        }
+        #contain ul{
+            height: 30px;
+        }
+       #contain li.selected{
+            background: #000;
+            color: red;
+        }
+        #contain div.show{
+            display: block;
+
+        }
+
+    </style>
+</head>
+<body>
+<div id="contain">
+    <ul>
+        <li class="selected">111</li>
+        <li  >222</li>
+        <li  >333</li>
+    </ul>
+    <div class="show">aaaa</div>
+    <div>bbbb</div>
+    <div>cccc</div>
+
+
+</div>
+    <script>
+        var aA=document.getElementsByTagName('li');
+        var oContain = document.getElementById('contain');
+        var aB=oContain.getElementsByTagName('div')
+        for(var i=0;i<aA.length;i++){
+            aA[i].index=i;
+            aA[i].onclick=function () {
+                for(var j=0;j<aA.length;j++){
+                    aA[j].className='';
+                    aB[j].className='';
+                }
+                this.className='selected';
+                 aB[this .index].className='show'
+               // aA[this .xx].style.backgroundColor='black'
+
+            }
+        }
+
+
+
+
+
+    </script>
+
+
+</div>
+
+</body>
+</html>
