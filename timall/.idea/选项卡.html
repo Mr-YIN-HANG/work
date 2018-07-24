@@ -19,7 +19,6 @@
         }
         #contain .imgs img {
             position: absolute;
-            display: none;
         }
 
         li,span{
@@ -37,11 +36,13 @@
             position: absolute;
             right: 10px;
             bottom: 10px;
+            z-index: 99999;
         }
         .arrows{
             position: absolute;
             left: 10px;
             bottom: 10px;
+            z-index: 99999;
         }
         #contain .imgs img.selected{
             display: block;
@@ -71,6 +72,7 @@
     </div>
 
 </div>
+<script src="jslib.js"> </script>
 <script>
     var aLi=document.getElementsByTagName('li')
     var aImg=document.getElementsByTagName('img')
@@ -78,6 +80,10 @@
     var aNext=document.getElementById('next')
     var aContain=document.getElementById('contain')
     var nowIndex = 0;
+    var zIndex=4;
+    for(var i=0;i<aImg.length;i++){
+        aImg[i].style.zIndex=aImg.length-i;
+    }
     for(var i=0;i<aLi.length;i++){
         aLi[i].index = i;
         aLi[i].onmouseover = function () {
@@ -102,10 +108,11 @@
     function changeImg(index){
         for(var j=0;j<aLi.length;j++){
             aLi[j].className = '';
-            aImg[j].className = '';
         }
-        aImg[index].className = 'selected';
         aLi[index].className = 'selected';
+        aImg[index].style.zIndex= ++zIndex;
+        aImg[index].style.opacity=0;
+        animate(aImg[index],{opacity:100});
     }
     aContain.onmouseover=function () {
         clearInterval(timer)
@@ -119,6 +126,29 @@
             aNext.onclick();
         },1000)
     }
+    // var index = 0;
+    // aNext.onclick = function(){
+    //     index++;
+    //     if(index == aImg.length){
+    //         index = 0;
+    //     }
+    //     for(var i=0;i<aImg.length;i++){
+    //         aImg[i].style.opacity = "0";
+    //     }
+    //     aImg[index].style.opacity = "1";
+    //
+    // }
+    // aPre.onclick = function(){
+    //     index--;
+    //     if(index == -1){
+    //         index = aImg.length-1;
+    //     }
+    //     for(var i=0;i<aImg.length;i++){
+    //         aImg[i].style.opacity = "0";
+    //     }
+    //     aImg[index].style.opacity = "1";
+    //
+    // }
 
 
 
