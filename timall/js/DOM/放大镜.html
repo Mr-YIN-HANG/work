@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container,#big{
+            width: 400px;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            float: left;
+        }
+        #big{
+            display: none;
+        }
+        #move{
+            width: 200px;
+            height: 200px;
+            background: rgba(16,16,16,.5);
+            position: absolute;
+            display:none;
+            top: 0;
+            left: 0;
+        }
+        #big img{
+            position: absolute;
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <img src="1.jpg" alt="">
+    <div id="move"></div>
+</div>
+<div id="big">
+    <img src="2.jpg" alt="">
+</div>
+<script>
+    var oMove=document.getElementById('move')
+    var oContainer=document.getElementById('container')
+    var oBig = document.getElementById('big');
+    var oBigImg = oBig.getElementsByTagName('img')[0];
+    oContainer.onmouseover=function () {
+        oMove.style.display='block';
+        oBig.style.display = 'block';
+                oContainer.onmousemove = function (e) {
+                    e = e || window.event;
+
+                    var disX = e.clientX - oMove.offsetWidth / 2;
+                    var disY = e.clientY - oMove.offsetHeight / 2;
+
+                    if(disX > oContainer.offsetWidth - oMove.offsetWidth){
+                        disX = oContainer.offsetWidth - oMove.offsetWidth
+                    }else if(disX < 0){
+                        disX = 0;
+                    }
+                    if(disY > oContainer.offsetHeight - oMove.offsetHeight){
+                        disY = oContainer.offsetHeight - oMove.offsetHeight
+                    }else if(disY < 0){
+                        disY = 0;
+                    }
+                    var xxx = disX / (oContainer.offsetWidth - oMove.offsetWidth);
+                    var bigX = xxx * (oBigImg.offsetWidth - oBig.offsetWidth);
+
+                    var yyy = disY / (oContainer.offsetHeight - oMove.offsetHeight);
+                    var bigY = yyy * (oBigImg.offsetHeight - oBig.offsetHeight);
+                    oBigImg.style.left = -bigX +'px';
+                    oBigImg.style.top = -bigY +'px';
+
+                    oMove.style.left = disX + 'px';
+                    oMove.style.top = disY + 'px';
+
+                }
+    }
+    oContainer.onmouseout = function () {
+        oMove.style.display = 'none';
+        oBig.style.display = 'none';
+    }
+</script>
+</body>
+</html>
