@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        li{
+            width: 191px;
+            height: 30px;
+            list-style: none;
+            float: left;
+            border: 1px solid #cccccc;
+            text-align: center;
+            background: #fff;
+            margin-right: 10px;
+
+        }
+        #contain li.selected{
+            background: #006262;
+        }
+        #contain div{
+            position: absolute;
+            width: 400px;
+            height: 270px;
+            background: #fff;
+            border-top: 1px solid #000;
+            display: none;
+        }
+        #contain{
+            width: 484px;
+            height: 316px;
+            margin: 100px auto;
+        }
+        #contain ul{
+            height: 30px;
+        }
+        #contain div.show{
+            display: block;
+
+        }
+        .img1{
+            height: 271px;
+            margin-left: 130px;
+        }
+    </style>
+</head>
+<body>
+<div id="contain">
+    <ul>
+        <li class="selected">今日疯抢</li>
+        <li  >量贩装</li>
+
+    </ul>
+    <div class="show">
+        <img class="img1" src="../../image/2.jpg" alt="">
+        <!--<div class="title-wrap">-->
+            <!--<img src="" alt="">-->
+            <!--<span>限时限量疯抢</span>-->
+
+        <!--</div>-->
+    </div>
+    <div class="show">
+        <img class="img1" src="../../image/1.jpg" alt="">
+        <div class="title-wrap">
+            <img src="" alt="">
+            <span>限时限量疯抢</span>
+
+        </div>
+    </div>
+    
+
+
+</div>
+<script>
+    var aA=document.getElementsByTagName('li');
+    var oContain = document.getElementById('contain');
+    var aB=oContain.getElementsByTagName('div')
+    for(var i=0;i<aA.length;i++){
+        aA[i].index=i;
+        aA[i].onmouseover=function () {
+            for(var j=0;j<aA.length;j++){
+                aA[j].className='';
+                aB[j].className='';
+            }
+            this.className='selected';
+            aB[this .index].className='show'
+
+
+        }
+    }
+
+
+
+
+
+</script>
+
+
+</div>
+
+</body>
+</html>

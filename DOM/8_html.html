@@ -62,13 +62,20 @@
     var aA=document.getElementsByTagName("a");
     var aSubmenu=document.getElementsByClassName("sub-menu");
     for( var i=0;i<aA.length;i++){
-        aA[i].xx=i;
+        aA[i].flag=true;
         aA[i].onclick=function () {
-            if(aSubmenu[this. xx].style.display=='block'){
-                aSubmenu[this. xx].style.display='none';
+            if(this.flag){
+                this.nextElementSibling.style.display='block' ;
+                this.flag=false;
             }else{
-                aSubmenu[this. xx].style.display='block';
+                this.nextElementSibling.style.display='none';
+                this.flag=true;
             }
+            // if(aSubmenu[this. xx].style.display=='block'){
+            //     aSubmenu[this. xx].style.display='none';
+            // }else{
+            //     aSubmenu[this. xx].style.display='block';
+            // }
             return false;
         }
 

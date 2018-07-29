@@ -16,13 +16,8 @@
             height: 280px;
             margin: 100px auto;
             position: relative;
-            overflow: hidden;
         }
         #contain .imgs img {
-            float: left;
-        }
-        #contain .imgs{
-            width: 2080px;
             position: absolute;
         }
 
@@ -59,13 +54,13 @@
 </head>
 <body>
 <div id="contain">
-    <div class="imgs" id="img-contain">
+    <div class="imgs">
         <img class="selected" src="../../image/1.jpg" alt="">
         <img src="../../image/5.jpg" alt="">
         <img src="../../image/3.jpg" alt="">
         <img src="../../image/4.jpg" alt="">
     </div>
-    <ul class="nav" >
+    <ul class="nav">
         <li class="selected">1</li>
         <li>2</li>
         <li>3</li>
@@ -84,7 +79,6 @@
     var aPre=document.getElementById('pre')
     var aNext=document.getElementById('next')
     var aContain=document.getElementById('contain')
-    var a=document.getElementById('img-contain');
     var nowIndex = 0;
     var zIndex=4;
     for(var i=0;i<aImg.length;i++){
@@ -116,10 +110,9 @@
             aLi[j].className = '';
         }
         aLi[index].className = 'selected';
-        animate(a,{left:-aImg[0].offsetWidth * index});
-        // aImg[index].style.zIndex= ++zIndex;
-        // aImg[index].style.opacity=0;
-        // animate(aImg[index],{opacity:100});
+        aImg[index].style.zIndex= ++zIndex;
+        aImg[index].style.opacity=0;
+        animate(aImg[index],{opacity:100});
     }
     aContain.onmouseover=function () {
         clearInterval(timer)
@@ -133,6 +126,35 @@
             aNext.onclick();
         },1000)
     }
+    // var index = 0;
+    // aNext.onclick = function(){
+    //     index++;
+    //     if(index == aImg.length){
+    //         index = 0;
+    //     }
+    //     for(var i=0;i<aImg.length;i++){
+    //         aImg[i].style.opacity = "0";
+    //     }
+    //     aImg[index].style.opacity = "1";
+    //
+    // }
+    // aPre.onclick = function(){
+    //     index--;
+    //     if(index == -1){
+    //         index = aImg.length-1;
+    //     }
+    //     for(var i=0;i<aImg.length;i++){
+    //         aImg[i].style.opacity = "0";
+    //     }
+    //     aImg[index].style.opacity = "1";
+    //
+    // }
+
+
+
+
+
+
 </script>
 
 

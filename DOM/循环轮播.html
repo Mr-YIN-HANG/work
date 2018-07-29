@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        li{
+            list-style: none;
+        }
+        #container{
+            width: 520px;
+            height: 200px;
+            margin: 200px auto;
+            text-align: center;
+            border: 1px solid black;
+            position: relative;
+            overflow: hidden;
+
+        }
+        li{
+            width: 120px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            background: #000;
+            color: white;
+            float: left;
+            margin-right:10px;
+            font-size: 40px;
+        }
+        #arrows{
+            position: absolute;
+            /*border: 1px solid black;*/
+
+            top: 140px;
+            width: 380px;
+            height: 100px;
+        }
+        #container .nav{
+            width: 1040px;
+            position: absolute;
+            left:0;
+        }
+        span{
+            width: 50px;
+            height: 50px;
+            line-height:50px ;
+            text-align: center;
+            background: gray;
+            color:black ;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <ul class="nav" style="left: 0">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div id="arrows">
+        <span id="prev">向前</span>
+        <span id="next">向后</span>
+    </div>
+    <script>
+        var aUl=document.getElementsByClassName('nav')
+        var Next=document.getElementById('next');
+        var Prev=document.getElementById('prev')
+        // var oContain=document.getElementById('container');
+        var speed=-2;
+        setInterval(function () {
+            var ileft = aUl[0].offsetLeft;
+            aUl[0].style.left=ileft+speed+'px';
+            if(ileft<-aUl[0].offsetWidth/2){
+            aUl[0].style.left=0;
+            }
+            if(ileft>0){
+                aUl[0].style.left=-aUl[0].offsetWidth/2+'px'
+            }
+
+
+
+        },10)
+        Prev.onmouseover=function () {
+            speed=-2;
+        }
+        Next.onmouseover=function () {
+            speed=2;
+        }
+
+    </script>
+
+
+</div>
+</body>
+</html>
