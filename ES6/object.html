@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // var str='my'
+    // var obj={
+    //     myName:'this is myname'
+    // }
+    // console.log(obj[str +'Name'])
+    // var obj={
+    //     a:1,
+    //     b:2
+    // }
+    // console.log(Object.assign(obj,{c:3}))
+    // console.log(obj)
+    var str=[1,2,3,NaN,4 ,5,6];
+    Array.prototype.io=function (n) {
+        for (var i=0;i<str.length;i++){
+            if (n===str[i]){
+                return i;
+            }
+        }
+        return -1;
+
+    }
+    console.log(str.io(NaN));
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
