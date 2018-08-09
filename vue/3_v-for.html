@@ -13,9 +13,9 @@
       <!--<li v-for="i in 3">-->
           <!--{{msg}}-->
       <!--</li>-->
-       <!--<li v-for="(val,index) in stuList">-->
-           <!--学生姓名是：{{val.name}},年龄是：{{val.age}},{{index}}-->
-       <!--</li>-->
+       <li v-for="(val,index) in sortStu">
+           学生姓名是：{{val.name}},年龄是：{{val.age}},{{index}}
+       </li>
        <!--<li v-for="(val,key,index) in obj">-->
            <!--{{index}},{{val}},{{key}}-->
        <!--</li>-->
@@ -43,6 +43,14 @@
                 b:2,
                 c:3
             }
+        },
+        computed:{
+            sortStu(){
+                return this.stuList.sort(function (a,b) {
+                    return a.age-b.age
+                })
+            }
+
         }
     })
 
