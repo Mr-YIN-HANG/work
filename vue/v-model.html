@@ -6,7 +6,7 @@
 </head>
 <body>
 <div id="app">
-    <input type="text"@keyup.13="fun" v-model="val">
+    <input type="text"@keyup.13="fun" v-model="val" >
     {{msg}}
 </div>
 <script src="vue.js"></script>
@@ -21,6 +21,7 @@
             fun(){
                 this.msg+=this.val*1
             }
+
         }
     })
 </script>
