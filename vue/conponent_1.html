@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <demo1 x-m-sg="123" :yy="m1">
+        <p slot="p1">51561565615</p>
+        <p slot="p2">66465464</p>
+    </demo1>
+    <demo1 x-m-sg="456" :yy="m2"></demo1>
+    {{msg}}
+</div>
+<script type="text/x-template" id="temp">
+    <div>
+        <slot name="p1">
+            <p>aaaaa</p>
+        </slot>
+        <slot name="p2">
+            <p>bbbbbb</p>
+        </slot>
+        <slot></slot>
+
+    </div>
+</script>
+<script src="vue.js"></script>
+<script>
+    //全局组件
+    //    Vue.component('demo',{
+    //        template:"<div>didv1 <h1>hhhhhhhh</h1></div>"
+    //    });
+
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            msg:'xx',
+            m1: 'haha',
+            m2: 'hehe'
+        },
+        //局部的组件
+        components:{
+            demo1:{
+                template:"#temp",
+                props:['XMSg','yy']
+            }
+        }
+    })
+
+    //    new Vue({
+    //        el:'#app2',
+    //        components:{
+    //            demo:{
+    //                template:"<div>didv1 <h1>hhhhhhhh</h1></div>"
+    //            }
+    //        }
+    //    })
+
+
+
+</script>
+</body>
+</html>
