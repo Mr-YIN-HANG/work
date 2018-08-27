@@ -1,7 +1,6 @@
-module.exports = {
-    // 选项...
-    lintOnSave:false,
+module.exports ={
     devServer:{
-        port: 8081
-    }
+        open:true
+    },
+    lintOnSave:false
 }

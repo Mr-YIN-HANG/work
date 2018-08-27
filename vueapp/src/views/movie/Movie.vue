@@ -1,5 +1,10 @@
 <template>
-    <div class="about">
-        <h1>Movie</h1>
-    </div>
+  <div class="movie">
+    <router-view></router-view>
+  </div>
 </template>
+<script>
+</script>
+<style scoped lang="scss">
+
+</style>

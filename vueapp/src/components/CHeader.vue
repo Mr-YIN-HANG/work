@@ -17,12 +17,13 @@
         width: 100%;
         color: #fff;
         position:fixed;
+        z-index: 1;
         top:0;
         line-height: 1rem;
         &-home{
-            font-size: 16px;
+             font-size: 16px;
 
-        }
+         }
         &-title{
             position: absolute;
             top:50%;
