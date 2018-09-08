@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="root">
+
+    </div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+    // //无状态组件
+    // let Welcome =(props)=>{
+    //     return (
+    //         <div>
+    //             <h1>hello</h1>
+    //             <p>{props.name[0]}</p>
+    //             <p>{props.hobby}</p>
+    //             <p>{props.children}</p>
+    //         </div>
+    //     )
+    // };
+    //有状态组件
+    class Welcome extends React.Component{
+        constructor(props){
+            super(props);
+        };
+        render(){
+            return <h1>{this.props.name} {this.props.children}</h1>
+        };
+    }
+    ReactDOM.render(
+        <Welcome name="zs" hobby="study">666</Welcome>
+        ,
+        document.getElementById('root')
+    );
+</script>
+</body>
+</html>
