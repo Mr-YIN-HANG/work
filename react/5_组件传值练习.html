@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root">
+</div>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel">
+    class Main extends React.Component{
+        constructor(props){
+            super(props)
+            this.state={
+                msg:100
+            }
+        }
+        change1(ele){
+            if(this.state.msg!=0)
+            {
+                this.setState({
+                    msg:this.state.msg-ele
+                })
+            }
+            else {
+                this.setState({
+                    msg:0
+                })
+            }
+        }
+        render(){
+            return(
+                <div>
+                    <h1>全部士兵数量：{this.state.msg}</h1>
+                    <Product1 myClick={this.change1.bind(this,10)} m={this.state.msg}></Product1>
+                    <Product2 myC={this.change1.bind(this,5)} m={this.state.msg}></Product2>
+                </div>
+            )
+        }
+    }
+    class Product1 extends React.Component{
+        constructor(props){
+            super(props)
+            this.state={
+                num:100
+            }
+        }
+        change(){
+            if(this.props.m ==0){
+                this.setState({
+                    num:this.state.num+0
+                })
+            }
+            else{
+                this.setState({
+                    num:this.state.num+10
+                })
+            }
+            }
+
+        render(){
+            return(
+                <div>
+                    <span>将军a有士兵:{this.state.num}</span>
+                    <button onClick={()=>{
+                        this.change()
+                        this.props.myClick()
+                    }}>调兵</button>
+                </div>
+            )
+        }
+    }
+    class Product2 extends React.Component{
+        constructor(props){
+            super(props)
+            this.state={
+                num:100
+            }
+        }
+        change3(){
+            if(this.props.m ==0){
+                this.setState({
+                    num:this.state.num+0
+                })
+            }
+            else{
+                this.setState({
+                    num:this.state.num+5
+                })
+            }
+        }
+        render(){
+            return(
+                <div>
+                    <span>将军b有士兵:{this.state.num}</span>
+                    <button onClick={()=>{
+                        this.change3()
+                        this.props.myC()
+                    }}>调兵</button>
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(
+        <Main></Main>
+        ,
+        document.getElementById('root')
+    )
+</script>
+</body>
+</html>
