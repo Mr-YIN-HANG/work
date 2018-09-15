@@ -23,17 +23,20 @@
                         {
                             name:'吃饭',
                             id:0,
-                            status: 0
+                            status: 0,
+                            isShow:true
                         },
                         {
                             name:'睡觉',
                             id:1,
-                            status: 0
+                            status: 0,
+                            isShow:true
                         },
                         {
                             name:'打豆豆',
                             id:2,
-                            status: 1
+                            status: 1,
+                            isShow:true
                         }
                     ],
                     finished:0,
@@ -44,6 +47,7 @@
             saveHandle(obj){
                 let arr = this.state.list;
                 arr.push(obj);
+1
 
                 this.setState({
                     list:arr,
@@ -54,7 +58,7 @@
             finishHandle(index){
                 let arr=this.state.list;
                 let sum=0;
-                arr[index].status=arr[index].status?0:1;
+                arr[index].status=!arr[index].status
                 this.setState({
                     list:arr
                 })
@@ -75,6 +79,7 @@
                     list:list
                 })
             }
+
             render(){
                 return(
                     <div className="container">
@@ -87,6 +92,8 @@
                                 })
                             }
                             <li>{this.state.finished}已完成/{this.state.list.length}全部</li>
+                            <button >已完成</button>
+
                         </ul>
 
                     </div>
